@@ -24,3 +24,13 @@ class CategoriesForm(ModelForm):
             'des' : _('Description') ,
 
         }
+
+class CommandesForm(ModelForm):
+    class Meta:
+        model = models.Commandes
+        fields = ('num_commande', 'date')
+        labels = {
+            'num_commande' : _('Numéro de commande'),
+            'date' : _('Date de la commande') ,
+
+        }

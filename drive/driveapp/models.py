@@ -40,6 +40,14 @@ class Commandes(models.Model):
     date = models.DateField(null = False)
     #client = clef étrangère
 
+    def __str__(self):
+        chaine = f"Commande n°{self.num_commande} à la date {self.date}"
+        return chaine
+
+
+    def dico(self):
+        return {"num_client": self.num_client, "date": self.date}
+
 #class Liste(models.Model):
 #commande = clef étrangere
 #produit et quantité = clef etrangere

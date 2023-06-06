@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, views_categories
+from . import views, views_categories, views_commandes
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -17,5 +17,13 @@ urlpatterns = [
     path("updatecategorie/<int:id>/", views_categories.updatecategorie),
     path("traitementupdatecategorie/<int:id>/", views_categories.traitementupdatecategorie),
     path("deletecategorie/<int:id>/", views_categories.deletecategorie),
+    #path pour commandes
+    path('indexcommandes/', views_commandes.indexcommandes),
+    path("ajoutcommandes/", views_commandes.ajoutcommandes),
+    path("traitementcommandes/", views_commandes.traitementcommandes),
+    path("affichecommandes/<int:id>/", views_commandes.affichecommandes),
+    path("updatecommandes/<int:id>/", views_commandes.updatecommandes),
+    path("traitementupdatecommandes/<int:id>/", views_commandes.traitementupdatecommandes),
+    path("deletecommandes/<int:id>/", views_commandes.deletecommandes),
 
 ]
