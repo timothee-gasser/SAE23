@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title%}
+        LLT Drive
+        {% endblock %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    
+    <nav>
+        <img id="logo_nav" src="icon.png">
+        <h1>LLT Drive</h1>
+        <nav class="actions">
+            <a href="">
+                <button>ACCEUIL</button>
+            </a>
+            <a href="/">
+                <button>CATEGORIES</button>
+            </a>
+            <a href="">
+                <button>PRODUITS</button>
+            </a>
+            <a href="">
+                <button>COMMANDE</button>
+            </a>
+            <a href="">
+                <button>CLIENTS</button>
+            </a>
+        </nav>
+    </nav>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
