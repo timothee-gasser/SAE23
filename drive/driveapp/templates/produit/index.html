@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>index</title>
 <body>
-<h1> Ma Concession </h1>
-<a href="/concession/ajout/"> Ajouter une moto </a>
+<h1> Mon Drive </h1>
+<a href="/driveapp/ajout/"> Ajouter un produit </a>
 <ol>
     {% for l in liste %}
-        <li> {{l}}  <a href="/concession/affiche/{{l.id}}/"> Afficher </a> <a href="/concession/update/{{l.id}}/"> Modifier </a> <a href="/concession/delete/{{l.id}}/"> Supprimer </a> </li>
+        <li> {{l}}  <a href="/driveapp/affiche/{{l.id}}/"> Afficher </a> <a href="/driveapp/update/{{l.id}}/"> Modifier </a> <a href="/driveapp/delete/{{l.id}}/"> Supprimer </a> </li>
     {% endfor %}
 </ol>
 

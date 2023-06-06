@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <form method="post" action="/concession/traitementupdate/{{id}}/">
+    <form method="post" action="/driveapp/traitementupdate/{{id}}/">
         {% csrf_token %}
         {{ form.as_ul }}
-        <input type="submit" value="envoyer␣les␣données"\>
+        <input type="submit" value="envoyer les données"\>
 </form>
 </body>
 </html>
