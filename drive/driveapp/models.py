@@ -9,7 +9,7 @@ class Categories(models.Model):
 class Produits(models.Model):
     nom_prod = models.CharField(max_length=100)
     date_per = models.DateField(blank=True, null = True)
-    photo = models.ImageField(upload_to="prod")
+    photo = models.ImageField(upload_to="prod",blank=True, null=True)
     marque = models.CharField(max_length=100)
     auteur = models.CharField(max_length=100)
     #catégorie = clef etrangere
