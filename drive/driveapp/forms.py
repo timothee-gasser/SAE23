@@ -14,3 +14,13 @@ class ProduitsForm(ModelForm):
             'auteur': _('Auteur'),
 
         }
+
+class CategoriesForm(ModelForm):
+    class Meta:
+        model = models.Categories
+        fields = ('nom_cat', 'des')
+        labels = {
+            'nom_cat' : _('Nom Catégorie'),
+            'des' : _('Description') ,
+
+        }
