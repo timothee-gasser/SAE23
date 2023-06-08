@@ -6,11 +6,11 @@
         {% endblock %}
     </title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     
-    <nav>
+    <nav class="navbar">
         <img id="logo_nav" src="icon.png">
         <h1>LLT Drive</h1>
         <nav class="actions">
@@ -31,6 +31,7 @@
             </a>
         </nav>
     </nav>
+    
 {% block content %}
 
 {% endblock %}
