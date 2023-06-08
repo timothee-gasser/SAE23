@@ -54,15 +54,17 @@
     flex: 1;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #ff0000;
-    color: #ffffff;
+    background-color: rgb(255, 255, 255);
+    color: #c9995b;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: font-size 0.3s; /* Ajout d'une transition fluide pour l'animation */
   }
   
   button:hover {
-    background-color: #cc0000;
+    background-color: #ffffff;
+    font-size: 18px; /* Taille du texte agrandie au survol */
   }
   
   /* CSS pour les images */
