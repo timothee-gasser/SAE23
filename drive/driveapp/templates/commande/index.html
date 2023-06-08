@@ -5,7 +5,7 @@
     <title>index</title>
 <body>
 <h1> Mon Drive </h1>
-<a href="/driveapp/ajoutcommandes/"> Ajouter un produit </a>
+<a href="/driveapp/ajoutcommandes/"> Ajouter une commande </a>
 <ol>
     {% for l in liste %}
         <li> {{l}}  <a href="/driveapp/affichecommandes/{{l.id}}/"> Afficher </a> <a href="/driveapp/updatecommandes/{{l.id}}/"> Modifier </a> <a href="/driveapp/deletecommandes/{{l.id}}/"> Supprimer </a> </li>

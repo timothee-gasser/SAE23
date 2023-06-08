@@ -5,10 +5,10 @@
     <title>index</title>
 <body>
 <h1> Mon Drive </h1>
-<a href="/driveapp/ajoutcategorie/"> Ajouter une catégorie </a>
+<a href="/driveapp/ajoutcategories/"> Ajouter une catégorie </a>
 <ol>
     {% for l in liste %}
-        <li> {{l}}  <a href="/driveapp/affichecategorie/{{l.id}}/"> Afficher </a> <a href="/driveapp/updatecategorie/{{l.id}}/"> Modifier </a> <a href="/driveapp/deletecategorie/{{l.id}}/"> Supprimer </a> </li>
+        <li> {{l}}  <a href="/driveapp/affichecategories/{{l.id}}/"> Afficher </a> <a href="/driveapp/updatecategories/{{l.id}}/"> Modifier </a> <a href="/driveapp/deletecategories/{{l.id}}/"> Supprimer </a> </li>
     {% endfor %}
 </ol>
 

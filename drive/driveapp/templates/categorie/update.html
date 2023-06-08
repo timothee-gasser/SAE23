@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form method="post" action="/driveapp/traitementupdatecategorie/{{id}}/">
+    <form method="post" action="/driveapp/traitementupdatecategories/{{id}}/">
         {% csrf_token %}
         {{ form.as_ul }}
         <input type="submit" value="envoyer les données"\>
