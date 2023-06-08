@@ -3,14 +3,18 @@ from django.http import HttpResponseRedirect
 from .forms import ProduitsForm
 from . import models
 
-def ajout(request):
+def ajout(request, id):
         form = ProduitsForm()
-        return render(request, "produit/ajout.html", {"form": form})
+        return render(request, "produit/ajout.html", {"form": form, "id": id})
 
-def traitement(request):
+def traitement(request, id):
+    categorie = models.Categories.objects.get(pk=id)
     lform = ProduitsForm(request.POST)
     if lform.is_valid():
-        Produits = lform.save()
+        Produits = lform.save(commit=False)
+        Produits.categories = categorie
+        Produits.categories_id = id
+        Produits.save()
         return HttpResponseRedirect("/driveapp/")
     else :
         return render(request, "produit/ajout.html", {"form": lform})

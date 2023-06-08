@@ -10,7 +10,7 @@ def ajoutcategories(request):
 def traitementcategories(request):
     lform = CategoriesForm(request.POST)
     if lform.is_valid():
-        Produits = lform.save()
+        Categories = lform.save()
         return HttpResponseRedirect("/driveapp/indexcategories")
     else :
         return render(request, "categorie/ajout.html", {"form": lform})

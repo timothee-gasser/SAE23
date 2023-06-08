@@ -38,7 +38,7 @@ class CommandesForm(ModelForm):
 
 class ClientsForm(ModelForm):
     class Meta:
-        model = models.Commandes
+        model = models.Clients
         fields = ('nom', 'prenom', 'num_client', 'date_inscri', 'adresse')
         labels = {
             'nom' : _('Nom'),

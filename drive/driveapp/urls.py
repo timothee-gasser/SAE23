@@ -2,9 +2,9 @@ from django.urls import path
 from . import views, views_categories, views_commandes, views_clients
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path("ajout/", views.ajout),
-    path("traitement/", views.traitement),
+    path('', views.index),
+    path("ajout/<int:id>/", views.ajout),
+    path("traitement/<int:id>/", views.traitement),
     path("affiche/<int:id>/", views.affiche),
     path("update/<int:id>/", views.update),
     path("traitementupdate/<int:id>/", views.traitementupdate),
