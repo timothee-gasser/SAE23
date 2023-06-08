@@ -8,10 +8,11 @@
 
   .container {
     max-width: 800px;
-    margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+    height: auto;
   }
   
   .text-container {
@@ -20,7 +21,7 @@
     padding: 20px;
     margin-top: 20px;
     margin-right: 20px;
-    width: 50%;
+    width: 45%;
 
   }
   
@@ -28,13 +29,15 @@
     display: flex;
     flex-direction: row;
     align-items:  flex-end;
-    width: 50%;
+    overflow: hidden;
+    width: 55%;
   }
   
   /* CSS pour le logo */
   #logo_index {
-    width: 100%;
-    height: auto;
+    width: 230%;
+    height: 100%;
+    object-fit: scale-down;
   }
   
   /* CSS pour l'article */
@@ -63,9 +66,9 @@
   
   /* CSS pour les images */
   .small-img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
+    width: 100%;
+    height: 95%;
+    object-fit: contain;
     margin-right: 10px;
   }
   
