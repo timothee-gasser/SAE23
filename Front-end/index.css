@@ -22,6 +22,7 @@
     margin-top: 20px;
     margin-right: 20px;
     width: 45%;
+    text-align: center;
 
   }
   
@@ -78,10 +79,11 @@
   /* CSS pour la barre de navigation */
 
 .navbar {
-  background-color: #f1f1f1;
+  background-color: #fffefe;
   padding: 10px;
   display: flex;
   align-items: center;
+  border-bottom: 2px solid black;
 }
 
 #logo_nav {
@@ -103,3 +105,10 @@ h1 {
 a {
   text-decoration: none; /* Enlever le soulignement des liens */
 }
+
+.title {
+  font-family: 'Slackside One', cursive; /* Exemple de police d'écriture */
+  font-size: 18px; /* Taille du titre */
+  font-weight: bold; /* Épaisseur du texte */
+}
+
