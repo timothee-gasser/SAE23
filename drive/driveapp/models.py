@@ -6,7 +6,8 @@ class Categories(models.Model):
     des = models.TextField(null = True, blank = True)
 
     def __str__(self):
-        return {self.nom_cat}
+        chaine = f"{self.nom_cat}"
+        return chaine
 
 
     def dico(self):
@@ -16,17 +17,17 @@ class Categories(models.Model):
 class Produits(models.Model):
     nom_prod = models.CharField(max_length=100)
     date_per = models.DateField(blank=True, null = True)
-    photo = models.ImageField(upload_to="prod",blank=True, null=True)
+    photo = models.ImageField(upload_to="product_images",blank=True, null=True)
     marque = models.CharField(max_length=100)
     auteur = models.CharField(max_length=100)
-    #categorie = clef etrangere
+    categories = models.ForeignKey("categories", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         chaine = f"{self.nom_prod} de la marque {self.marque} et qui périme le {self.date_per}."
         return chaine
 
     def dico(self):
-        return {"nom_prod": self.nom_prod, "date_per": self.date_per, "photo": self.photo, "marque": self.marque, "auteur": self.auteur}
+        return {"nom_prod": self.nom_prod, "date_per": self.date_per, "photo": self.photo, "marque": self.marque, "auteur": self.auteur, "categories": self.categories}
 
 class Clients(models.Model):
     num_client = models.CharField(max_length=200)
@@ -46,7 +47,7 @@ class Commandes(models.Model):
 
 
     def dico(self):
-        return {"num_client": self.num_client, "date": self.date}
+        return {"num_commande": self.num_commande, "date": self.date}
 
 #class Liste(models.Model):
 #commande = clef étrangere

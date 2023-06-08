@@ -4,41 +4,41 @@ from .forms import CommandesForm
 from . import models
 
 def ajoutcommandes(request):
-        form = CategoriesForm()
-        return render(request, "categorie/ajout.html", {"form": form})
+        form = CommandesForm()
+        return render(request, "commande/ajout.html", {"form": form})
 
 def traitementcommandes(request):
-    lform = CategoriesForm(request.POST)
+    lform = CommandesForm(request.POST)
     if lform.is_valid():
         Produits = lform.save()
-        return HttpResponseRedirect("/driveapp/produit/index.html")
+        return HttpResponseRedirect("/driveapp/indexcommandes")
     else :
-        return render(request, "categorie/ajout.html", {"form": lform})
+        return render(request, "commande/ajout.html", {"form": lform})
 
 def indexcommandes(request):
-    liste = list(models.Categories.objects.all())
-    return render(request, "categorie/index.html",{"liste": liste})
+    liste = list(models.Commandes.objects.all())
+    return render(request, "commande/index.html",{"liste": liste})
 
 def affichecommandes(request, id):
-    categories = models.Categories.objects.get(pk=id)
-    return render(request, "categorie/affiche.html", {"categories": categories})
+    commandes = models.Commandes.objects.get(pk=id)
+    return render(request, "commande/affiche.html", {"commandes": commandes})
 
 def updatecommandes(request, id):
-    categories = models.Categories.objects.get(pk=id)
-    form = CategoriesForm(categories.dico())
-    return render(request,"categorie/update.html",{"form": form, "id": id})
+    commandes = models.Commandes.objects.get(pk=id)
+    form = CommandesForm(commandes.dico())
+    return render(request,"commande/update.html",{"form": form, "id": id})
 
 def traitementupdatecommandes(request, id):
-    lform = CategoriesForm(request.POST)
+    lform = CommandesForm(request.POST)
     if lform.is_valid():
-        Categories = lform.save(commit=False)
-        Categories.id = id
-        Categories.save()
-        return HttpResponseRedirect("/driveapp/produit/index.html")
+        Commandes = lform.save(commit=False)
+        Commandes.id = id
+        Commandes.save()
+        return HttpResponseRedirect("/driveapp/indexcommandes")
     else:
-        return render(request, "categorie/update.html", {"form": lform, "id": id})
+        return render(request, "commande/update.html", {"form": lform, "id": id})
 
 def deletecommandes(request, id):
-    categories = models.Categories.objects.get(pk=id)
-    categories.delete()
-    return HttpResponseRedirect("/driveapp/produit/index.html")
+    commandes = models.Commandes.objects.get(pk=id)
+    commandes.delete()
+    return HttpResponseRedirect("/driveapp/indexcommandes")
