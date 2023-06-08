@@ -106,9 +106,47 @@ a {
   text-decoration: none; /* Enlever le soulignement des liens */
 }
 
-.title {
-  font-family: 'Slackside One', cursive; /* Exemple de police d'écriture */
-  font-size: 18px; /* Taille du titre */
-  font-weight: bold; /* Épaisseur du texte */
+ /* CSS pour catégorie Fruit */
+
+#left-image {
+  height: 50vh;
+  flex: 0 0 auto; 
 }
 
+.content-container {
+  
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.container_fruit {
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+
+.title-container {
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.description-container {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 0;
+}
