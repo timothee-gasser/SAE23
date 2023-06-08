@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+<body>
+<h1> Mon Drive </h1>
+<a href="/driveapp/ajoutclients/"> S'enregistrer </a>
+<ol>
+    {% for l in liste %}
+        <li> {{l.nom}} {{l.prenom}}  <a href="/driveapp/afficheclients/{{l.id}}/"> Info </a> <a href="/driveapp/updateclients/{{l.id}}/"> Modifier </a> <a href="/driveapp/deleteclients/{{l.id}}/"> Supprimer </a> </li>
+    {% endfor %}
+</ol>
+
+</body>
+</html>

@@ -32,7 +32,7 @@ class Produits(models.Model):
 class Clients(models.Model):
     nom = models.CharField(max_length=200)
     prenom = models.CharField(max_length=200)
-    num_client = models.IntegerField(null= False, max_length=14)
+    num_client = models.CharField(null= False, max_length=10)
     date_inscri = models.DateField(null = False)
     adresse = models.CharField(max_length=200)
 

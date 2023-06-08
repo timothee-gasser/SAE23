@@ -10,7 +10,7 @@ def ajoutcommandes(request):
 def traitementcommandes(request):
     lform = CommandesForm(request.POST)
     if lform.is_valid():
-        Produits = lform.save()
+        Commandes = lform.save()
         return HttpResponseRedirect("/driveapp/indexcommandes")
     else :
         return render(request, "commande/ajout.html", {"form": lform})
