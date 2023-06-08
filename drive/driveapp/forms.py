@@ -35,3 +35,17 @@ class CommandesForm(ModelForm):
             'date' : _('Date de la commande') ,
 
         }
+
+class ClientsForm(ModelForm):
+    class Meta:
+        model = models.Commandes
+        fields = ('nom', 'prenom', 'num_client', 'date_inscri', 'adresse')
+        labels = {
+            'nom' : _('Nom'),
+            'prenom' : _('Prénom') ,
+            'num_client': _('Numéro de téléphone'),
+            'date_inscri': _("Date d'inscription"),
+            'adresse': _('Adresse'),
+
+
+        }
