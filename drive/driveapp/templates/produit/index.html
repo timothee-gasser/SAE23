@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
-<body>
+{% extends 'main.html' %}
+
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
 <ol>
     {% for l in liste %}
         <li> {{l}}  <a href="/driveapp/afficheproduits/{{l.id}}/"> Afficher </a> <a href="/driveapp/updateproduits/{{l.id}}/"> Modifier </a> <a href="/driveapp/deleteproduits/{{l.id}}/"> Supprimer </a> </li>
@@ -11,4 +14,4 @@
 </ol>
 
 </body>
-</html>
+{% endblock %}

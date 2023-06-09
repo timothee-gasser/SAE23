@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Affichage {{produits.nom_prod}}</title>
-</head>
+{% extends 'main.html' %}
+
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
 <body>
 <img src="{{ produits.photo }}" alt="Image du produit"> {{produits}}
 
 
 </body>
-</html>
+{% endblock %}
