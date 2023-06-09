@@ -21,7 +21,8 @@ def indexcategories(request):
 
 def affichecategories(request, id):
     categories = models.Categories.objects.get(pk=id)
-    return render(request, "categorie/affiche.html", {"categories": categories})
+    liste = models.Produits.objects.filter(categories_id = id)
+    return render(request, "categorie/affiche.html", {"categories": categories, "liste": liste})
 
 def updatecategories(request, id):
     categories = models.Categories.objects.get(pk=id)
