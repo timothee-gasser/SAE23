@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
+{% extends 'main.html' %}
+
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
 <body>
-<h1> Mon Drive </h1>
 <a href="/driveapp/ajoutclients/"> S'enregistrer </a>
 <ol>
     {% for l in liste %}
@@ -13,4 +15,4 @@
 </ol>
 
 </body>
-</html>
+{% endblock %}

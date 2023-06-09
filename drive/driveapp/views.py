@@ -20,6 +20,9 @@ def traitement(request, id):
         return render(request, "produit/ajout.html", {"form": lform})
 
 def index(request):
+    return render(request, "index.html")
+
+def pageproduits(request):
     liste = list(models.Produits.objects.all())
     return render(request, "produit/index.html",{"liste": liste})
 

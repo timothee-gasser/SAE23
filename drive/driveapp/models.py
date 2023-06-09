@@ -37,7 +37,7 @@ class Clients(models.Model):
     adresse = models.CharField(max_length=200)
 
     def __str__(self):
-        chaine = f"{self.nom} {self.prenom} inscrit/e le {self.date_inscri} habitant à {self.adresse}. Numéro de téléphone : {self.num_client}"
+        chaine = f"{self.nom} {self.prenom}"
         return chaine
 
     def dico(self):
@@ -46,10 +46,10 @@ class Clients(models.Model):
 class Commandes(models.Model):
     num_commande = models.IntegerField(null= False)
     date = models.DateField(null = False)
-    #client = clef étrangère
+    clients = models.ForeignKey("clients", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
-        chaine = f"Commande n°{self.num_commande} à la date {self.date}"
+        chaine = f"Commande n°{self.num_commande} à la date {self.date} effectuée par {self.clients}."
         return chaine
 
 
