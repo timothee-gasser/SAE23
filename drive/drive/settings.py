@@ -67,8 +67,15 @@ WSGI_APPLICATION = 'drive.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SAE',
+        'USER': 'sae',
+        'PASSWORD': 'lucaslucatimothee',
+        'HOST': '213.166.220.248',
+        'PORT': '5306',
+        'OPTIONS': {
+            'autocommit': True,
+        },
     }
 }
 
