@@ -3,6 +3,7 @@ from . import views, views_categories, views_commandes, views_clients
 
 urlpatterns = [
     path('', views.index),
+    path("pageproduits/", views.pageproduits),
     path("ajout/<int:id>/", views.ajout),
     path("traitement/<int:id>/", views.traitement),
     path("affiche/<int:id>/", views.affiche),
