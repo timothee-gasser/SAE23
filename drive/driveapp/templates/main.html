@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title class="title">{% block title%}
+        LLT Drive
+        {% endblock %}
+    </title>
+    {% load static %}
+   <link rel="stylesheet" href="{%static '/drive/index.css'%}">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <img id="logo_nav" src="{%static '/drive/icon.png'%}">
+        <h1>LLT Drive</h1>
+        <nav class="actions">
+            <a href="/driveapp/">
+                <button>ACCUEIL</button>
+            </a>
+            <a href="/driveapp/indexcategories">
+                <button>CATEGORIES</button>
+            </a>
+            <a href="">
+                <button>PRODUITS</button>
+            </a>
+            <a href="/driveapp/ajoutcommandes">
+                <button>COMMANDE</button>
+            </a>
+            <a href="/driveapp/ajoutclients">
+                <button>CLIENTS</button>
+            </a>
+        </nav>
+    </nav>
+    
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

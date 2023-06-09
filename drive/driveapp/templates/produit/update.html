@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'main.html' %}
+
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
 <body>
     <form method="post" action="/driveapp/traitementupdate/{{id}}/">
         {% csrf_token %}
@@ -11,4 +13,4 @@
         <input type="submit" value="envoyer les données"\>
 </form>
 </body>
-</html>
+{% endblock %}}

@@ -1,16 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
-<body>
-<h1> Mon Drive </h1>
-<a href="/driveapp/ajout/"> Ajouter un produit </a>
-<ol>
-    {% for l in liste %}
-        <li> {{l}}  <a href="/driveapp/affiche/{{l.id}}/"> Afficher </a> <a href="/driveapp/update/{{l.id}}/"> Modifier </a> <a href="/driveapp/delete/{{l.id}}/"> Supprimer </a> </li>
-    {% endfor %}
-</ol>
+{% extends 'main.html' %}
 
-</body>
-</html>
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+    <div class="container">
+        <img id="logo_index" src="{%static '/drive/img.jpg'%}">
+    </div>
+
+    <div class="container_corps">
+        <div class="text-container">
+            <article>
+                orem Elsass ipsum non Racing. adipiscing senectus id, munster suspendisse knepfle eget jetz gehts los placerat schneck gravida  geht's hopla météor pellentesque risus, Huguette turpis, elementum non quam. hoplageiss yeuh. Wurschtsalad morbi vielmols, leo Chulia Roberstau Hans réchime ornare tchao bissame ante condimentum libero, sed ullamcorper salu purus rhoncus Richard Schirmeck Pfourtz ! gewurztraminer varius so lotto-owe Spätzle lacus geïz nullam mänele gal Christkindelsmärik porta commodo barapli Kabinetpapier Heineken elit in, ftomi! libero, Coopé de Truchtersheim hopla ornare und amet tellus messti de Bischheim Chulien bredele mollis baeckeoffe eleifend Miss Dahlias chambon wie semper Morbi Mauris picon bière ac Salu bissame hopla flammekueche schpeck wurscht blottkopf, habitant aliquam ac sit Salut bisamme sit DNA, auctor, Oberschaeffolsheim Gal. Strasbourg vulputate ch'ai Yo dû. quam, Carola amet, libero. Gal ! amet bissame tellus merci vielmols et sagittis rucksack Oberschaeffolsheim nüdle kuglopf Verdammi tristique leverwurscht leo sit dui dolor id sed hop dignissim kartoffelsalad kougelhopf hopla s'guelt schnaps Pellentesque knack turpis mamsell consectetur rossbolla
+            </article>
+        
+            <a href="/">
+                <button>COMMANDER MAINTENANT</button>
+            </a>
+        
+        
+        </div>
+
+        <div class="image-container">
+            <img class="small-img" src="{%static '/drive/img1.jpg'%}">
+            <img class="small-img" src="{%static '/drive/img2.jpg'%}">
+        </div>
+    </div>
+{% endblock %}

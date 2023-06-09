@@ -19,15 +19,15 @@ class Produits(models.Model):
     date_per = models.DateField(blank=True, null = True)
     photo = models.ImageField(upload_to="produits_images",blank=True, null=True)
     marque = models.CharField(max_length=100)
-    auteur = models.CharField(max_length=100)
+    prix = models.CharField(max_length=100)
     categories = models.ForeignKey("categories", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
-        chaine = f"{self.nom_prod} de la marque {self.marque} et qui périme le {self.date_per}."
+        chaine = f"{self.nom_prod} de la marque {self.marque} au prix de {self.prix}€ et qui périme le {self.date_per}."
         return chaine
 
     def dico(self):
-        return {"nom_prod": self.nom_prod, "date_per": self.date_per, "photo": self.photo, "marque": self.marque, "auteur": self.auteur, "categories": self.categories}
+        return {"nom_prod": self.nom_prod, "date_per": self.date_per, "photo": self.photo, "marque": self.marque, "prix": self.prix, "categories": self.categories}
 
 class Clients(models.Model):
     nom = models.CharField(max_length=200)

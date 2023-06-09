@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulaire de saisie</title>
-</head>
-<body>
-  <h1> Saisie d'un nouveau produit </h1>
-  <form method="post" action="/driveapp/traitement/{{id}}/">
+{% extends 'main.html' %}
+
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<body class="body">
+  <h1 class="h1"> Saisie d'un nouveau produit </h1>
+  <form class=form" method="post" action="/driveapp/traitement/{{id}}/">
    {% csrf_token %}
    {{form.as_ul}}
    <input type="submit" value="envoyer les données"\>
   </form>
 </body>
-</html>
+{% endblock %}

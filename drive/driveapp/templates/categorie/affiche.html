@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Affichage {{categories.nom_cat}}</title>
-</head>
+{% extends 'main.html' %}
+
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
 <body>
 <a href="/driveapp/ajout/{{categories.id}}"> Ajouter un produit </a>
 {{categories.nom_cat}}
 <p>{{categories.des}}</p>
 
 </body>
-</html>
+{% endblock %}
