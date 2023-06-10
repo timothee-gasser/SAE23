@@ -24,7 +24,7 @@ class Produits(models.Model):
     categories = models.ForeignKey("Categories", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
-        chaine = f"{self.nom_prod} de la marque {self.marque} au prix de {self.prix}€ et qui périme le {self.date_per}. Quantité : {self.quantite}"
+        chaine = f"{self.nom_prod} de la marque {self.marque} au prix de {self.prix}€. Quantité : {self.quantite}"
         return chaine
 
     def dico(self):
@@ -46,7 +46,8 @@ class Clients(models.Model):
 
 class Commandes(models.Model):
     num_commande = models.IntegerField(null= False)
-    produit = models.ManyToManyField(Produits, through='CommandeProduit')
+    produit = models.ForeignKey("Produits", on_delete=models.CASCADE, default=None)
+    quantite = models.IntegerField(default=0)
     date = models.DateField(null = False)
     clients = models.ForeignKey("Clients", on_delete=models.CASCADE, default=None)
 
@@ -58,12 +59,14 @@ class Commandes(models.Model):
     def dico(self):
         return {"num_commande": self.num_commande, "date": self.date}
 
-class CommandeProduit(models.Model):
+class Liste(models.Model):
     commande = models.ForeignKey(Commandes, on_delete=models.CASCADE)
-    produit = models.ForeignKey(Produits, on_delete=models.CASCADE)
-    quantite = models.IntegerField()
 
-#class Liste(models.Model):
-#commande = clef étrangere
-#produit et quantité = clef etrangere
+    def __str__(self):
+        chaine = f"Commande n°{self.commande}."
+        return chaine
+
+
+    def dico(self):
+        return {"commande": self.commande}
 

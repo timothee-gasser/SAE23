@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, views_categories, views_commandes, views_clients
+from . import views, views_categories, views_commandes, views_clients, views_liste
 
 urlpatterns = [
     path('', views.index),
@@ -34,5 +34,11 @@ urlpatterns = [
     path("updateclients/<int:id>/", views_clients.updateclients),
     path("traitementupdateclients/<int:id>/", views_clients.traitementupdateclients),
     path("deleteclients/<int:id>/", views_clients.deleteclients),
+    # path pour liste
+    path('indexliste/', views_liste.indexliste),
+    path("afficheliste/<int:id>/", views_liste.afficheliste),
+    path("updateliste/<int:id>/", views_liste.updateliste),
+    path("traitementupdateliste/<int:id>/", views_liste.traitementupdateliste),
+    path("deleteliste/<int:id>/", views_liste.deleteliste),
 
 ]

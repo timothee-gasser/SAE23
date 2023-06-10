@@ -6,8 +6,8 @@ LLT Drive
 
 {% block content %}
 {% load static %}
-<body>
-    <form method="post" action="/driveapp/traitementupdateclients/{{id}}/">
+<body class="body">
+    <form class="form" method="post" action="/driveapp/traitementupdateclients/{{id}}/">
         {% csrf_token %}
         {{ form.as_ul }}
         <input type="submit" value="envoyer les données"\>
