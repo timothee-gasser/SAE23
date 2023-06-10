@@ -8,8 +8,12 @@ LLT Drive
 {% load static %}
 <body>
 <a href="/driveapp/ajout/{{categories.id}}"> Ajouter un produit </a>
-{{categories.nom_cat}}
 <p>{{categories.des}}</p>
+<ol>
+    {% for l in liste %}
+        <li> {{l}} <a href="/driveapp/affiche/{{l.id}}/"> Afficher </a> <a href="/driveapp/update/{{l.id}}/"> Modifier </a> <a href="/driveapp/delete/{{l.id}}/"> Supprimer </a></li>
+    {% endfor %}
+</ol>
 
 </body>
 {% endblock %}

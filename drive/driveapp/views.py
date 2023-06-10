@@ -11,11 +11,11 @@ def traitement(request, id):
     categorie = models.Categories.objects.get(pk=id)
     lform = ProduitsForm(request.POST)
     if lform.is_valid():
-        Produits = lform.save(commit=False)
-        Produits.categories = categorie
-        Produits.categories_id = id
-        Produits.save()
-        return HttpResponseRedirect("/driveapp/")
+        produits = lform.save(commit=False)
+        produits.categories = categorie
+        produits.categories_id = id
+        produits.save()
+        return HttpResponseRedirect("/driveapp/indexcategories/")
     else :
         return render(request, "produit/ajout.html", {"form": lform})
 
@@ -48,4 +48,4 @@ def traitementupdate(request, id):
 def delete(request, id):
     produits = models.Produits.objects.get(pk=id)
     produits.delete()
-    return HttpResponseRedirect("/driveapp/")
+    return HttpResponseRedirect("/driveapp/indexcategories/")

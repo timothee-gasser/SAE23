@@ -20,14 +20,15 @@ class Produits(models.Model):
     photo = models.ImageField(upload_to="produits_images",blank=True, null=True)
     marque = models.CharField(max_length=100)
     prix = models.CharField(max_length=100)
-    categories = models.ForeignKey("categories", on_delete=models.CASCADE, default=None)
+    quantite = models.IntegerField(default=0)
+    categories = models.ForeignKey("Categories", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
-        chaine = f"{self.nom_prod} de la marque {self.marque} au prix de {self.prix}€ et qui périme le {self.date_per}."
+        chaine = f"{self.nom_prod} de la marque {self.marque} au prix de {self.prix}€ et qui périme le {self.date_per}. Quantité : {self.quantite}"
         return chaine
 
     def dico(self):
-        return {"nom_prod": self.nom_prod, "date_per": self.date_per, "photo": self.photo, "marque": self.marque, "prix": self.prix, "categories": self.categories}
+        return {"nom_prod": self.nom_prod, "date_per": self.date_per, "photo": self.photo, "marque": self.marque, "prix": self.prix, "quantite": self.quantite, "categories": self.categories}
 
 class Clients(models.Model):
     nom = models.CharField(max_length=200)
@@ -45,8 +46,9 @@ class Clients(models.Model):
 
 class Commandes(models.Model):
     num_commande = models.IntegerField(null= False)
+    produit = models.ManyToManyField(Produits, through='CommandeProduit')
     date = models.DateField(null = False)
-    clients = models.ForeignKey("clients", on_delete=models.CASCADE, default=None)
+    clients = models.ForeignKey("Clients", on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         chaine = f"Commande n°{self.num_commande} à la date {self.date} effectuée par {self.clients}."
@@ -55,6 +57,11 @@ class Commandes(models.Model):
 
     def dico(self):
         return {"num_commande": self.num_commande, "date": self.date}
+
+class CommandeProduit(models.Model):
+    commande = models.ForeignKey(Commandes, on_delete=models.CASCADE)
+    produit = models.ForeignKey(Produits, on_delete=models.CASCADE)
+    quantite = models.IntegerField()
 
 #class Liste(models.Model):
 #commande = clef étrangere
