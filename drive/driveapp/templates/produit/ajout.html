@@ -9,7 +9,7 @@ LLT Drive
     <link rel="stylesheet" href="{%static '/drive/index.css'%}">
 <body class="body">
   <h1 class="h1" > Saisie d'un nouveau produit </h1>
-  <form class="form" method="post" action="/driveapp/traitement/{{id}}/">
+  <form class="form" method="post" action="/driveapp/traitement/{{id}}/" enctype="multipart/form-data">
    {% csrf_token %}
    {{form.as_ul}}
    <input type="submit" value="envoyer les données"\>

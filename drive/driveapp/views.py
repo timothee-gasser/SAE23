@@ -9,7 +9,7 @@ def ajout(request, id):
 
 def traitement(request, id):
     categorie = models.Categories.objects.get(pk=id)
-    lform = ProduitsForm(request.POST)
+    lform = ProduitsForm(request.POST, request.FILES)
     if lform.is_valid():
         produits = lform.save(commit=False)
         produits.categories = categorie

@@ -17,11 +17,11 @@ class Categories(models.Model):
 class Produits(models.Model):
     nom_prod = models.CharField(max_length=100)
     date_per = models.DateField(blank=True, null = True)
-    photo = models.ImageField(upload_to="produits_images",blank=True, null=True)
+    photo2 = models.ImageField(upload_to="produits_images/",blank=True, null=True)
     marque = models.CharField(max_length=100)
     prix = models.CharField(max_length=100)
     quantite = models.IntegerField(default=0)
-    categories = models.ForeignKey("Categories", on_delete=models.CASCADE, default=None)
+    categories = models.ForeignKey("Categories", on_delete=models.CASCADE, default=None, null=True)
 
     def __str__(self):
         chaine = f"{self.nom_prod} de la marque {self.marque} au prix de {self.prix}€. Quantité : {self.quantite}"

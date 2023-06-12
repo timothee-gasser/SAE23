@@ -191,3 +191,9 @@ input[type="number"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.image{
+width: 10%;
+height: 10%;
+margin-top: 2%;
+}
