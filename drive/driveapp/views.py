@@ -41,7 +41,7 @@ def traitementupdate(request, id):
         Produits = lform.save(commit=False)
         Produits.id = id
         Produits.save()
-        return HttpResponseRedirect("/driveapp/")
+        return HttpResponseRedirect("/driveapp/indexcategories/")
     else:
         return render(request, "produit/update.html", {"form": lform, "id": id})
 

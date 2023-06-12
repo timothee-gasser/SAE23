@@ -28,7 +28,7 @@ class Produits(models.Model):
         return chaine
 
     def dico(self):
-        return {"nom_prod": self.nom_prod, "date_per": self.date_per, "photo": self.photo, "marque": self.marque, "prix": self.prix, "quantite": self.quantite, "categories": self.categories}
+        return {"nom_prod": self.nom_prod, "date_per": self.date_per, "photo2": self.photo2, "marque": self.marque, "prix": self.prix, "quantite": self.quantite, "categories": self.categories}
 
 class Clients(models.Model):
     nom = models.CharField(max_length=200)
@@ -47,7 +47,6 @@ class Clients(models.Model):
 class Commandes(models.Model):
     num_commande = models.IntegerField(null= False)
     produit = models.ForeignKey("Produits", on_delete=models.CASCADE, default=None)
-    quantite = models.IntegerField(default=0)
     date = models.DateField(null = False)
     clients = models.ForeignKey("Clients", on_delete=models.CASCADE, default=None)
 

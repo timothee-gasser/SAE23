@@ -31,13 +31,13 @@ class CategoriesForm(ModelForm):
 class CommandesForm(ModelForm):
     class Meta:
         model = models.Commandes
-        fields = ('num_commande', 'date', 'produit', 'clients', 'quantite')
+        fields = ('num_commande', 'date', 'clients', 'produit')
         labels = {
             'num_commande' : _('Numéro de commande'),
             'date' : _('Date de la commande') ,
             'clients' : _('Nom Client'),
             'produit' : _('Produit'),
-            'quantite' : _('Quantité'),
+
 
         }
 
