@@ -46,7 +46,7 @@ class Clients(models.Model):
 
 class Commandes(models.Model):
     num_commande = models.IntegerField(null= False)
-    produit = models.ForeignKey("Produits", on_delete=models.CASCADE, default=None)
+    produit = models.ForeignKey("Produits", on_delete=models.CASCADE, default=None, null=True)
     date = models.DateField(null = False)
     clients = models.ForeignKey("Clients", on_delete=models.CASCADE, default=None)
 
