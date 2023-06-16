@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
+{% extends 'main.html' %}
+
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
 <body>
 <a href="/driveapp/ajoutcommandes/"> Ajouter une commande </a>
 <ol>
@@ -12,4 +15,4 @@
 </ol>
 
 </body>
-</html>
+{% endblock %}

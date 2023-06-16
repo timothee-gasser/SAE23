@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Affichage {{commandes.num_commande}}</title>
-</head>
+{% extends 'main.html' %}
+
+{% block title %}
+LLT Drive
+{% endblock %}
+
+{% block content %}
+{% load static %}
 <body>
 {{commandes}}
 
 </body>
-</html>
+{% endblock %}

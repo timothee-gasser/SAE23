@@ -50,6 +50,7 @@ class Commandes(models.Model):
     date = models.DateField(null = False)
     clients = models.ForeignKey("Clients", on_delete=models.CASCADE, default=None)
 
+
     def __str__(self):
         chaine = f"Commande n°{self.num_commande} à la date {self.date} effectuée par {self.clients}."
         return chaine
