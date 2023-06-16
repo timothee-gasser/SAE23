@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('driveapp/', include('driveapp.urls')),
+    path('', include('driveapp.urls')),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
